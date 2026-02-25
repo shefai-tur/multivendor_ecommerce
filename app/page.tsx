@@ -9,9 +9,8 @@ export default function Home() {
    
 
     <Button variant="destructive">Primary Button</Button>
-    <Button variant="destructive">Primary Button</Button>
-    <Button variant="destructive">Primary Button</Button>
-    <Button variant="destructive">Primary Button</Button>
+   
+    
    </div>
   );
 }
