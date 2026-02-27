@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,Barlow } from "next/font/google";
+import { Geist, Geist_Mono, Barlow } from "next/font/google";
 import "./globals.css";
+
+//Theme provider
+import { ThemeProvider } from "next-themes";
 
 //fonts
 const geistSans = Geist({
@@ -20,8 +23,9 @@ const barlowFont = Barlow({
 
 //metadata
 export const metadata: Metadata = {
-  title: "marzora.com",
-  description: "A multivendor ecommerce website built with Next.js 13, Tailwind CSS, and TypeScript.",
+  title: "marzax.com",
+  description:
+    "A multivendor ecommerce website built with Next.js 13, Tailwind CSS, and TypeScript.",
 };
 
 //layout
@@ -31,12 +35,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${barlowFont.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem  disableTransitionOnChange>
+          {children}
+          </ThemeProvider>
       </body>
     </html>
   );
