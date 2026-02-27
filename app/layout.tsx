@@ -11,6 +11,8 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -20,6 +22,8 @@ const barlowFont = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+//clerk Provider
+import { ClerkProvider } from '@clerk/nextjs'
 
 //metadata
 export const metadata: Metadata = {
@@ -35,6 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${barlowFont.variable} antialiased`}
@@ -44,5 +49,6 @@ export default function RootLayout({
           </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
