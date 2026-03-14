@@ -1,4 +1,5 @@
 import Header from "@/src/components/dashboard/header/header";
+import Sidebar from "@/src/components/dashboard/sidebar/sidebar";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -17,6 +18,7 @@ export default async function AdminDashboardLayout({
       <div className="ml-75 ">
         {/* Header */}
         <Header  />
+        <Sidebar/>
         <div className="w-full mt-18.75 p-4">{children}</div>
       </div>
     </div>
